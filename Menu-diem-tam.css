@@ -1,0 +1,392 @@
+p {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0px;
+}
+
+body {
+    margin: 0px;
+}
+
+/* showbar-1 */
+
+.Tshowtable {
+    display: block;
+}
+
+.Tcontainer {
+    height: 120px;
+    width: 100%;
+    background-color: rgb(25, 25, 25);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.left-selection-1 {
+    width: 102px;
+    min-width: 102px;
+    margin-left: 400px;
+}
+
+.center-selection-1 {
+    width: 702px;
+    min-width: 702px;
+}
+
+.right-selection-1 {
+    display: flex;
+    flex-direction: row;
+    width: 320px;
+    min-width: 320px;
+    margin-right: 400px;
+}
+
+.store {
+    width: 50%;
+}
+
+.mcdelivery {
+    width: 50%;
+}
+
+.button-bar {
+    width: 95%;
+    height: 40%;
+    margin-top: 35px;
+    margin-left: 20px;
+    background-color: #BD0017;
+    border: none;
+    border-radius: 40px;
+    display: flex;
+}
+
+.icon-bar {
+    height: 35px;
+    padding: 5px 5px 5px 1px;
+}
+
+.text-in-button-top {
+    color: white;
+    font-size: 12px;
+    margin-left: 0px;
+    margin-top: 3px;
+}
+
+.text-in-button-bottom {
+    font-size: 16px;
+    color: #FFC125;
+}
+
+.text-in-button {
+    margin-left: 5px;
+}
+
+.mcdonald-logo {
+    height: 110px;
+}
+
+.homepalce-1 {
+    font-family: 'Open Sans';
+    color: white;
+    font-size: 18px;
+    display: inline-block;
+    padding: 45px 30px 35px 45px;
+    cursor: pointer;
+}
+
+.homepalce-1:hover {
+    color: rgb(255, 218, 26);
+}
+
+.homepalce-2 {
+    font-family: 'Open Sans';
+    color: white;
+    font-size: 18px;
+    display: inline-block;
+    padding: 45px 30px 35px 0px;
+    cursor: pointer;
+}
+
+.homepalce-2:hover {
+    color: rgb(255, 218, 26);
+}
+
+.homepalce-3 {
+    font-family: 'Open Sans';
+    color: rgb(255, 218, 26);
+    font-size: 18px;
+    display: inline-block;
+    padding: 45px 30px 35px 0px;
+    cursor: pointer;
+}
+
+.homepalce-4 {
+    font-family: 'Open Sans';
+    color: white;
+    font-size: 18px;
+    display: inline-block;
+    padding: 45px 30px 35px 0px;
+    cursor: pointer;
+}
+
+.homepalce-4:hover {
+    color: rgb(255, 218, 26);
+}
+
+.homepalce-5 {
+    font-family: 'Open Sans';
+    color: white;
+    font-size: 18px;
+    display: inline-block;
+    padding: 45px 30px 35px 0px;
+    cursor: pointer;
+}
+
+.homepalce-5:hover {
+    color: rgb(255, 218, 26);
+}
+
+.homepalce-6 {
+    font-family: 'Open Sans';
+    color: white;
+    font-size: 18px;
+    display: inline-block;
+    padding: 45px 30px 35px 0px;
+    cursor: pointer;
+}
+
+.homepalce-6:hover {
+    color: rgb(255, 218, 26);
+}
+
+/*showbar-2*/
+
+.Mshowtable {
+    display: block;
+}
+
+.Mcontainer {
+    height: 80px;
+    width: 100%;
+    background-color: rgb(71, 71, 71);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 22px;
+}
+
+.left-selection-2 {
+    width: 400px;
+    min-width: 400px;
+    background-color: rgb(71, 71, 71);
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.center-selection-2 {
+    width: 400px;
+    background-color: #BD0017;
+
+    min-width: 400px;
+    cursor: pointer;
+}
+
+.left-selection-2:hover {
+    background-color: #BD0017;
+}
+
+.right-selection-2 {
+    width: 400px;
+    min-width: 400px;
+    cursor: pointer;
+}
+
+.right-selection-2:hover {
+    background-color: #BD0017;
+}
+
+.text-in-showbar-2 {
+    font-size: 24px;
+    color: white;
+    margin-top: 20px;
+    text-align: center;
+}
+.text-in-showbar-2 {
+    font-size: 24px;
+    color: white;
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+.text-in-showbar-2-1{
+    padding-top: 20px;
+}
+
+.square-red {
+    height: 40px;
+    margin-left: 180px;
+}
+
+/*body-container*/
+
+.body-container {
+    display: grid;
+    grid-template-columns: 550px 550px;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+@media (max-width: 1100px){
+    .body-container{
+        grid-template-columns: 550px;
+    }
+}
+.menu-preview-1 {
+    width: 100%;
+    height: 300px;
+    display: grid;
+    grid-template-columns: 250px 300px;
+}
+
+.menu-preview-2 {
+    width: 100%;
+    height: 300px;
+    display: grid;
+    grid-template-columns: 250px 300px;
+}
+
+.picture-preview {
+    width: 280px;
+}
+
+.left-slide {
+    display: flex;
+    flex-direction: column;
+}
+
+.name-of-food {
+    height: 40px;
+    padding-left: 20px;
+    margin-top: 100px;
+    color: #BD0017;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.food-infor {
+    padding-left: 20px;
+    color: #30363D;
+    font-size: 16px;
+    margin-top: 14px;
+}
+
+.button-food {
+    margin-left: 20px;
+    margin-top: 10px;
+    font-family: OpenSans-light;
+    font-size: 14px;
+    background: none;
+    color: #bd0017;
+    border: 1px solid #bd0017;
+    border-radius: 30px;
+    padding-right: 30px;
+    text-decoration: none;
+    padding-left: 30px;
+    cursor: pointer;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.hr {
+    width: 1100px;
+    margin-top: 30px
+}
+
+
+
+/*text-container*/
+
+.text-container {
+    display: grid;
+    grid-template-columns: 275px 275px 275px 275px;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.text-div-1 {
+    width: 100%;
+    height: 220px;
+}
+
+.text-div-2 {
+    width: 100%;
+    height: 220px;
+}
+
+.text-div-3 {
+    width: 100%;
+    height: 220px;
+}
+
+.text-div-4 {
+    width: 100%;
+    height: 220px;
+}
+
+.title-text-below {
+    font-size: 16px;
+    color: #444444;
+    font-weight: bold;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.text-in-bshowbar {
+    font-size: 16px;
+    color: #444444;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+.title-text-below-1 {
+    font-size: 16px;
+    color: #444444;
+    font-weight: bold;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.picture-in-bshowbar-3 {
+    display: flex;
+    flex-direction: row;
+}
+
+.picture-in-bshowbar-3-1 {
+    height: 35px;
+    margin-top: 20px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.picture-in-bshowbar-3-2 {
+    height: 38px;
+    margin-top: 10px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+/*Bshowtable */
+
+.Bshowtable {
+    height: 50px;
+    width: 100%;
+    background-color: rgb(25, 25, 25);
+    margin-top: 20px;
+}
+
+.text-in-showbar-3 {
+    color: white;
+    margin-left: 1210px;
+    padding-top: 15px;
+}
