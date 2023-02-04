@@ -3,6 +3,11 @@ p {
     margin: 0px;
 }
 
+a{
+    font-family: 'Open Sans', sans-serif;
+
+}
+
 body {
     margin: 0px;
 }
@@ -179,7 +184,6 @@ body {
     width: 400px;
     min-width: 400px;
     background-color: #BD0017;
-    vertical-align: middle;
     cursor: pointer;
 }
 
@@ -208,7 +212,12 @@ body {
     color: white;
     margin-top: 20px;
     text-align: center;
+    text-decoration: none;
 }
+.text-in-showbar-2-1{
+    padding-top: 20px;
+}
+
 
 .square-red {
     height: 40px;

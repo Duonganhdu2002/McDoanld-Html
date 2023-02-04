@@ -182,28 +182,28 @@ body {
     vertical-align: middle;
     cursor: pointer;
 }
+.left-selection-2:hover {
+    background-color: #BD0017;
+}
 
 .center-selection-2 {
     width: 400px;
-    background-color: #BD0017;
-
+    background-color: rgb(71, 71, 71);
     min-width: 400px;
     cursor: pointer;
 }
 
-.left-selection-2:hover {
+.center-selection-2:hover {
     background-color: #BD0017;
 }
 
 .right-selection-2 {
     width: 400px;
+    background-color: #BD0017;
     min-width: 400px;
     cursor: pointer;
 }
 
-.right-selection-2:hover {
-    background-color: #BD0017;
-}
 
 .text-in-showbar-2 {
     font-size: 24px;
@@ -211,6 +211,7 @@ body {
     margin-top: 20px;
     text-align: center;
 }
+
 .text-in-showbar-2 {
     font-size: 24px;
     color: white;
@@ -254,17 +255,14 @@ body {
     display: grid;
     grid-template-columns: 250px 300px;
 }
-
-.picture-preview {
+.picture-preview{
     width: 280px;
 }
-
-.left-slide {
+.left-slide{
     display: flex;
     flex-direction: column;
 }
-
-.name-of-food {
+.name-of-food{
     height: 40px;
     padding-left: 20px;
     margin-top: 100px;
@@ -272,15 +270,13 @@ body {
     font-size: 24px;
     font-weight: bold;
 }
-
-.food-infor {
+.food-infor{
     padding-left: 20px;
     color: #30363D;
     font-size: 16px;
     margin-top: 14px;
 }
-
-.button-food {
+.button-food{
     margin-left: 20px;
     margin-top: 10px;
     font-family: OpenSans-light;
@@ -296,11 +292,11 @@ body {
     padding-top: 7px;
     padding-bottom: 7px;
 }
-
 .hr {
     width: 1100px;
     margin-top: 30px
 }
+
 
 
 
@@ -332,50 +328,43 @@ body {
     width: 100%;
     height: 220px;
 }
-
-.title-text-below {
+.title-text-below{
     font-size: 16px;
     color: #444444;
     font-weight: bold;
     margin-bottom: 15px;
     width: 100%;
 }
-
-.text-in-bshowbar {
+.text-in-bshowbar{
     font-size: 16px;
     color: #444444;
     margin-bottom: 8px;
     margin-top: 8px;
     cursor: pointer;
 }
-
-.title-text-below-1 {
+.title-text-below-1{
     font-size: 16px;
     color: #444444;
     font-weight: bold;
     margin-top: 20px;
     width: 100%;
 }
-
-.picture-in-bshowbar-3 {
+.picture-in-bshowbar-3{
     display: flex;
     flex-direction: row;
 }
-
-.picture-in-bshowbar-3-1 {
+.picture-in-bshowbar-3-1{
     height: 35px;
     margin-top: 20px;
     margin-right: 5px;
     cursor: pointer;
 }
-
-.picture-in-bshowbar-3-2 {
+.picture-in-bshowbar-3-2{
     height: 38px;
     margin-top: 10px;
     margin-right: 5px;
     cursor: pointer;
 }
-
 /*Bshowtable */
 
 .Bshowtable {
@@ -385,7 +374,7 @@ body {
     margin-top: 20px;
 }
 
-.text-in-showbar-3 {
+.text-in-showbar-3{
     color: white;
     margin-left: 1210px;
     padding-top: 15px;
