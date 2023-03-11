@@ -264,15 +264,15 @@ body {
 
 .tetx-menu{
     color: #888888;
+    padding-left: 22%;
     font-size: 30px;
-    margin-left: 420px;
     margin-bottom: 16px
 }
 
 .tetx-menu-1{
-    margin-left: 420px;
     color: #BD0017;
     font-size: 30px;
+    padding-left: 22%;
 }
 .item {
     display: flex;
