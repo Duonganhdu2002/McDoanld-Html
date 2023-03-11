@@ -249,13 +249,9 @@ body {
     display: grid;
     grid-template-columns: 285px 285px 285px 285px;
     grid-auto-rows: minmax(100px, auto);
+    justify-content: center;
     gap: 10px;
     margin: 0 auto;
-    /* căn giữa */
-    padding-left: 370px;
-    /* đặt khoảng cách bên trái */
-    padding-right: 390px;
-    /* đặt khoảng cách bên phải */
 }
 
 .item:hover {
