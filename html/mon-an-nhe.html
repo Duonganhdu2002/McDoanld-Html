@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="../assets/McDonald's_Golden_Arches.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Món ăn nhẹ - McDonald's™ Vietnam</title>
+    <link rel="stylesheet" href="../css/phan-an-evm.css">
+</head>
+
+<body>
+
+    <div id="root"></div> <!-- Khung chứa giao diện -->
+
+    <script>
+        const snacks = [
+            { name: "Khoai Tây Chiên (size nhỏ) - 206 Kcal", price: "19,000 VNĐ", imgSrc: "../assets/regular_world_famous_fries.png" },
+            { name: "Khoai Tây Chiên (size vừa)", price: "29,000 VNĐ", imgSrc: "../assets/medium_world_famous_fries.png" },
+            { name: "Khoai Tây Chiên (size lớn)", price: "39,000 VNĐ", imgSrc: "../assets/large_world_famous_fries.png" },
+            { name: "Kem McSundae™ sốt Sôcôla", price: "29,000 VNĐ", imgSrc: "../assets/hotfudge_mcsundae.png" },
+            { name: "Kem McSundae™ sốt Dâu", price: "29,000 VNĐ", imgSrc: "../assets/strawberry-mcsundae.png" },
+            { name: "Burger Gà", price: "34,000 VNĐ", imgSrc: "../assets/chicken_burger.png" },
+            { name: "Burger thịt nướng - 337 Kcal", price: "32,000 VNĐ", imgSrc: "../assets/pork_burger.png" },
+            { name: "Burger bò truyền thống", price: "32,000 VNĐ", imgSrc: "../assets/hamburger.png" },
+            { name: "Burger bò phô-mai - 323 Kcal", price: "39,000 VNĐ", imgSrc: "../assets/cheeseburger.png" },
+            { name: "Salad lắc", price: "35,000 VNĐ", imgSrc: "../assets/salad500.png" }
+        ];
+
+        function renderHeader() {
+            return `
+                <div class="Tcontainer">
+                    <div class="left-selection-1">
+                        <img class="mcdonald-logo" src="../assets/logo-mcdonalds.png" alt="McDonald's Logo">
+                    </div>
+                    <div class="center-selection-1">
+                        ${["Trang chủ", "Tìm hiểu", "Thực đơn", "Khuyến mãi", "Tin tức", "Liên hệ"]
+                            .map((item, index) => `<div class="homepalce-${index + 1}">${item}</div>`)
+                            .join("")}
+                    </div>
+                    <div class="right-selection-1">
+                        ${renderButton("../assets/location.png", "Hệ thống", "Cửa Hàng")}
+                        ${renderButton("../assets/delivery-menu.png", "Giao hàng", "McDelivery")}
+                        <div class="store-cart">
+                            <button class="button-bar-onclick">
+                                <img class="icon-bar-1" src="../assets/cart-menu.png" alt="Cart Icon">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderButton(icon, topText, bottomText) {
+            return `
+                <div class="store">
+                    <button class="button-bar">
+                        <img class="icon-bar" src="${icon}" alt="${topText} Icon">
+                        <div class="text-in-button">
+                            <p class="text-in-button-top">${topText}</p>
+                            <p class="text-in-button-bottom">${bottomText}</p>
+                        </div>
+                    </button>
+                </div>
+            `;
+        }
+
+        function renderSnacks() {
+            return snacks.map(snack => `
+                <div class="item">
+                    <img class="image-item" src="${snack.imgSrc}" alt="${snack.name}">
+                    <p class="introduce">${snack.name}</p>
+                    <p class="price">${snack.price}</p>
+                    <button class="add-to-cart">ADD TO CART</button>
+                </div>
+            `).join('');
+        }
+
+        function renderFooter() {
+            return `
+                <div class="text-container">
+                    ${renderFooterSection("Tìm hiểu", [
+                        "Lịch sử McDonald's", "Giới thiệu McDonald's Việt Nam", "Xuất xứ",
+                        "Nhà cung cấp", "Dịch vụ", "An toàn thực phẩm"
+                    ])}
+                    ${renderFooterSection("Cơ hội nghề nghiệp", [
+                        "Thông tin tuyển dụng", "Khu vực TP.HCM", "Khu vực Hà Nội"
+                    ])}
+                    ${renderFooterSection("Chính sách", [
+                        "Các câu hỏi thường gặp", "Điều khoản và điều kiện", "Chính sách và quyền riêng tư"
+                    ])}
+                </div>
+                <div class="Bshowtable">
+                    <div class="text-below">
+                        <p class="text-in-showbar-3">©2017-2018 McDonald's. All Rights Reserved.</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderFooterSection(title, items) {
+            return `
+                <div class="text-div-1">
+                    <p class="title-text-below">${title}</p>
+                    ${items.map(item => `<p class="text-in-bshowbar">${item}</p>`).join('')}
+                </div>
+            `;
+        }
+
+        function renderUI() {
+            document.getElementById('root').innerHTML = `
+                <div class="Tshowtable">
+                    ${renderHeader()}
+                    <div class="tiltle-of-menu">
+                        <p class="tetx-menu">Món ăn nhẹ</p>
+                    </div>
+                    <div class="container">
+                        ${renderSnacks()}
+                    </div>
+                    <hr class="hr" />
+                    ${renderFooter()}
+                </div>
+            `;
+        }
+
+        renderUI();
+    </script>
+
+</body>
+
+</html>

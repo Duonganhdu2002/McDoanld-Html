@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="assets/McDonald's_Golden_Arches.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thức uống nóng - McDonald's™ Vietnam</title>
+    <link rel="stylesheet" href="../css/phan-an-evm.css">
+</head>
+
+<body>
+
+    <div id="root"></div> <!-- Khung chứa giao diện -->
+
+    <script>
+        // Dữ liệu danh sách thức uống nóng
+        const hotDrinks = [
+            { name: "Americano", price: "39,000 VNĐ", imgSrc: "../assets/americano.png" },
+            { name: "Cappucino", price: "40,000 VNĐ", imgSrc: "../assets/cappucino.png" },
+            { name: "Matcha Latte Nóng", price: "60,000 VNĐ", imgSrc: "../assets/hotmatcha.png" },
+            { name: "Sô cô la nóng", price: "49,000 VNĐ", imgSrc: "../assets/hotchoco.png" },
+            { name: "Latte nóng", price: "49,000 VNĐ", imgSrc: "../assets/hotlatte.png" },
+            { name: "Cà phê Mocha", price: "59,000 VNĐ", imgSrc: "../assets/mocha.png" }
+        ];
+
+        // Hàm render thức uống nóng
+        function renderHotDrinks() {
+            return hotDrinks.map(drink => `
+                <div class="item">
+                    <img class="image-item" src="${drink.imgSrc}" alt="${drink.name}">
+                    <p class="introduce">${drink.name}</p>
+                    <p class="price">${drink.price}</p>
+                    <button class="add-to-cart">ADD TO CART</button>
+                </div>
+            `).join('');
+        }
+
+        // Hàm render header
+        function renderHeader() {
+            return `
+                <div class="Tcontainer">
+                    <div class="left-selection-1">
+                        <img class="mcdonald-logo" src="../assets/logo-mcdonalds.png" alt="McDonald's Logo">
+                    </div>
+                    <div class="center-selection-1">
+                        ${["Trang chủ", "Tìm hiểu", "Thực đơn", "Khuyến mãi", "Tin tức", "Liên hệ"].map(
+                            (text, index) => `<div class="homepalce-${index + 1}">${text}</div>`
+                        ).join('')}
+                    </div>
+                    <div class="right-selection-1">
+                        ${renderButton("../assets/location.png", "Hệ thống", "Cửa Hàng")}
+                        ${renderButton("../assets/delivery-menu.png", "Giao hàng", "McDelivery")}
+                        <div class="store-cart">
+                            <button class="button-bar-onclick">
+                                <img class="icon-bar-1" src="../assets/cart-menu.png" alt="Cart Icon">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Hàm tạo button
+        function renderButton(icon, topText, bottomText) {
+            return `
+                <div class="store">
+                    <button class="button-bar">
+                        <img class="icon-bar" src="${icon}" alt="${topText} Icon">
+                        <div class="text-in-button">
+                            <p class="text-in-button-top">${topText}</p>
+                            <p class="text-in-button-bottom">${bottomText}</p>
+                        </div>
+                    </button>
+                </div>
+            `;
+        }
+
+        // Hàm render footer
+        function renderFooter() {
+            return `
+                <div class="text-container">
+                    ${renderFooterSection("Tìm hiểu", [
+                        "Lịch sử McDonald's", "Giới thiệu McDonald's Việt Nam", "Xuất xứ", 
+                        "Nhà cung cấp", "Dịch vụ", "An toàn thực phẩm"
+                    ])}
+                    ${renderFooterSection("Cơ hội nghề nghiệp", [
+                        "Thông tin tuyển dụng", "Khu vực TP.HCM", "Khu vực Hà Nội"
+                    ])}
+                    ${renderFooterSection("Chính sách", [
+                        "Các câu hỏi thường gặp", "Điều khoản và điều kiện", "Chính sách và quyền riêng tư"
+                    ])}
+                    <div class="text-div-4">
+                        <p class="title-text-below">Liên hệ với chúng tôi</p>
+                        <p class="text-in-bshowbar">Liên hệ</p>
+                        <p class="text-in-bshowbar">Phản hồi chất lượng dịch vụ</p>
+                        <div class="picture-in-bshowbar-3">
+                            ${["facebook", "instagram", "youtube"].map(icon => `
+                                <img class="picture-in-bshowbar-3-2" src="../assets/${icon}.png" alt="${icon}">
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+                <div class="Bshowtable">
+                    <div class="text-below">
+                        <p class="text-in-showbar-3">©2017-2018 McDonald's. All Rights Reserved.</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Hàm render từng section của footer
+        function renderFooterSection(title, items) {
+            return `
+                <div class="text-div-1">
+                    <p class="title-text-below">${title}</p>
+                    ${items.map(item => `<p class="text-in-bshowbar">${item}</p>`).join('')}
+                </div>
+            `;
+        }
+
+        // Hàm render toàn bộ UI
+        function renderUI() {
+            document.getElementById('root').innerHTML = `
+                <div class="Tshowtable">
+                    ${renderHeader()}
+                    <div class="tiltle-of-menu">
+                        <p class="tetx-menu">Thức uống nóng</p>
+                    </div>
+                    <div class="container">
+                        ${renderHotDrinks()}
+                    </div>
+                    <hr class="hr" />
+                    ${renderFooter()}
+                </div>
+            `;
+        }
+
+        // Khởi chạy UI
+        renderUI();
+    </script>
+
+</body>
+
+</html>

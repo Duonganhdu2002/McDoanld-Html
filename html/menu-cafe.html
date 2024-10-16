@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="../assets/McDonald's_Golden_Arches.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Điểm Tâm - McDonald's™ Vietnam</title>
+    <link rel="stylesheet" href="../css/menu-diem-tam.css">
+</head>
+
+<body>
+
+    <div class="Tshowtable">
+        <div class="Tcontainer">
+            <div class="left-selection-1">
+                <img class="mcdonald-logo" src="../assets/logo-mcdonalds.png">
+            </div>
+            <div class="center-selection-1" id="menu-navigation"></div>
+            <div class="right-selection-1" id="store-buttons"></div>
+        </div>
+
+        <div class="Mcontainer">
+            <div class="left-selection-2">
+                <a class="text-in-showbar-2" href="../index.html">
+                    <p class="text-in-showbar-2-1">Menu Chính</p>
+                </a>
+            </div>
+            <div class="center-selection-2">
+                <p class="text-in-showbar-2">Menu Điểm Tâm</p>
+                <img class="square-red" src="../assets/arrow-menu-page.png">
+            </div>
+            <div class="right-selection-2">
+                <a class="text-in-showbar-2" href="../html/menu-cafe.html">
+                    <p class="text-in-showbar-2-1">Menu Cafe</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="body-container" id="menu-preview"></div>
+    </div>
+
+    <hr class="hr" />
+
+    <div class="text-container" id="info-sections"></div>
+
+    <div class="Bshowtable">
+        <div class="text-below">
+            <p class="text-in-showbar-3">
+                ©2017-2018 McDonald's. All Rights Reserved.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Dữ liệu
+        const navigationItems = [
+            { name: "Trang chủ", link: "#" },
+            { name: "Tìm hiểu", link: "#" },
+            { name: "Thực đơn", link: "#" },
+            { name: "Khuyến mãi", link: "#" },
+            { name: "Tin tức", link: "#" },
+            { name: "Liên hệ", link: "#" }
+        ];
+
+        const storeButtons = [
+            { icon: "../assets/location.png", top: "Hệ thống", bottom: "Cửa Hàng" },
+            { icon: "../assets/delivery-menu.png", top: "Giao hàng", bottom: "McDelivery" }
+        ];
+
+        const menuItems = [
+            { name: "Phần ăn EVM", image: "../assets/breakfast-EVM.png", link: "../html/phan-an-evm.html" },
+            { name: "Bánh Muffin", image: "../assets/diem-tam-muffin.png", link: "../html/banh-muffin.html" },
+            { name: "Nước uống", image: "../assets/thuc-uong (1).png", link: "../html/thuc-uong.html" },
+            { name: "Tráng miệng", image: "../assets/trang-mieng.png", link: "../html/trang-mieng.html" },
+            { name: "Phần ăn trẻ em", image: "../assets/happymeal.png", link: "../html/phan-an-cho-be.html" },
+            { name: "Món ăn nhẹ", image: "../assets/regular_world_famous_fries.png", link: "../html/mon-an-nhe.html" }
+        ];
+
+        const infoSections = [
+            { title: "Tìm hiểu", items: ["Lịch sử McDonald's", "Giới thiệu McDonald's Việt Nam", "Xuất xứ", "Nhà cung cấp", "Dịch vụ", "An toàn thực phẩm"] },
+            { title: "Cơ hội nghề nghiệp", items: ["Thông tin tuyển dụng", "Khu vực TP.HCM", "Khu vực Hà Nội"] },
+            { title: "Chính sách", items: ["Các câu hỏi thường gặp", "Điều khoản và điều kiện", "Chính sách và quyền riêng tư"] }
+        ];
+
+        // Hàm render chung
+        const renderHTML = (containerId, items, template) => {
+            const container = document.getElementById(containerId);
+            container.innerHTML = items.map(template).join('');
+        };
+
+        // Các template HTML
+        const navTemplate = item => `
+            <div class="homepalce-1">
+                <a href="${item.link}" style="text-decoration: none; color: inherit;">${item.name}</a>
+            </div>`;
+
+        const storeButtonTemplate = button => `
+            <button class="button-bar">
+                <img class="icon-bar" src="${button.icon}">
+                <div class="text-in-button">
+                    <p class="text-in-button-top">${button.top}</p>
+                    <p class="text-in-button-bottom">${button.bottom}</p>
+                </div>
+            </button>`;
+
+        const menuTemplate = item => `
+            <div class="menu-preview-1">
+                <div class="left-slide">
+                    <div class="name-of-food">${item.name}</div>
+                    <a href="${item.link}" class="link-kham-pha">
+                        <button class="button-food">KHÁM PHÁ</button>
+                    </a>
+                </div>
+                <div class="right-slide">
+                    <img class="picture-preview" src="${item.image}">
+                </div>
+            </div>`;
+
+        const infoTemplate = section => `
+            <div class="text-div-1">
+                <p class="title-text-below">${section.title}</p>
+                ${section.items.map(item => `<p class="text-in-bshowbar">${item}</p>`).join('')}
+            </div>`;
+
+        // Render nội dung
+        renderHTML('menu-navigation', navigationItems, navTemplate);
+        renderHTML('store-buttons', storeButtons, storeButtonTemplate);
+        renderHTML('menu-preview', menuItems, menuTemplate);
+        renderHTML('info-sections', infoSections, infoTemplate);
+    </script>
+
+</body>
+
+</html>
